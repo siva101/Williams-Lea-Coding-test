@@ -1,0 +1,23 @@
+<!-- uksi/templates/uksi/contents.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <p><strong>Description:</strong> {{ description }}</p>
+    <p><strong>Made on:</strong> {{ made_date }}</p>
+    <p><strong>Coming into force on:</strong> {{ coming_into_force }}</p>
+
+    <h2>Contents</h2>
+    <ul>
+        {% for article in articles %}
+            <li>
+                <strong>Article {{ article.number }}:</strong>
+                <a href="{{ article.link }}" target="_blank">{{ article.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
